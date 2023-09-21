@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">GitHubSearchApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="name">Username:</string>
+    <string name="repoName">Repository Name</string>
+    <string name="login">Login</string>
+    <string name="description">Default description text for repository</string>
+    <string name="defaultText">Default Text</string>
+    <string name="numberOfStars">Number of Start</string>
+
+    <string-array name="dateArray">
+        <item>Last Day</item>
+        <item>Last Week</item>
+        <item>Last Month</item>
+    </string-array>
+</resources>
