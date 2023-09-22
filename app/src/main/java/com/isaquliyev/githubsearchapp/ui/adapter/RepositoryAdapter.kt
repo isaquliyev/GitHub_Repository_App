@@ -10,9 +10,10 @@ import androidx.recyclerview.widget.RecyclerView
 import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.isaquliyev.githubsearchapp.R
 import com.isaquliyev.githubsearchapp.model.Item
+import com.isaquliyev.githubsearchapp.utils.OnItemClickListener
 import com.squareup.picasso.Picasso
 
-class RepositoryAdapter(var list : List<Item>) : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>() {
+class RepositoryAdapter(var list : List<Item>, val listener : OnItemClickListener) : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
         val username: TextView = itemView.findViewById(R.id.usernameId)
@@ -42,7 +43,9 @@ class RepositoryAdapter(var list : List<Item>) : RecyclerView.Adapter<Repository
             holder.description.setText(R.string.defaultText)
         }
         Picasso.get().load(list[position].owner.avatar_url).into(holder.profilePhoto)
-
+        holder.itemView.setOnClickListener {
+            listener.onCLick(list[position])
+        }
 
     }
 
