@@ -7,13 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ArrayAdapter
 import android.widget.Spinner
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProvider
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.isaquliyev.githubsearchapp.R
 import com.isaquliyev.githubsearchapp.databinding.FragmentHomeBinding
+import com.isaquliyev.githubsearchapp.ui.adapter.RepositoryAdapter
+import com.isaquliyev.githubsearchapp.viewmodel.RepositoriesViewModel
 
 class HomeFragment : Fragment() {
 
     private lateinit var binding : FragmentHomeBinding
     private lateinit var spinner : Spinner
+    private lateinit var repositoriesViewModel: RepositoriesViewModel
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -32,11 +38,16 @@ class HomeFragment : Fragment() {
             R.array.dateArray,
             android.R.layout.simple_spinner_item
         ).also { adapter ->
-            // Specify the layout to use when the list of choices appears
             adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item)
-            // Apply the adapter to the spinner
             spinner.adapter = adapter
         }
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
+        repositoriesViewModel = ViewModelProvider(this)[RepositoriesViewModel::class.java]
+        repositoriesViewModel.getRepositories("created:2023-09-15", "stars", "desc")
+        repositoriesViewModel.observeRepositoryLiveData().observe(viewLifecycleOwner, Observer { repository ->
+            binding.recyclerView.adapter = RepositoryAdapter(repository.items)
+        })
 
 
     }

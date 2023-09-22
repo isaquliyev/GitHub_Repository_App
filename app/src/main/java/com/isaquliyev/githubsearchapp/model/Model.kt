@@ -3,7 +3,7 @@ package com.isaquliyev.githubsearchapp.model
 import com.isaquliyev.githubsearchapp.R
 import java.io.Serializable
 
-data class Result(val total_count: String, val incomplete_result: String, val items: List<Item>)
+data class ApiResponse(val total_count: String, val incomplete_result: String, val items: List<Item>)
 
 data class Item(
     val id: Int,

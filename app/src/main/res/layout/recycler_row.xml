@@ -7,7 +7,7 @@
     android:paddingBottom="@dimen/d_12">
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/profilePhoto"
         android:layout_width="@dimen/d_75"
         android:layout_height="@dimen/d_75"
         app:layout_constraintStart_toStartOf="parent"
@@ -15,32 +15,32 @@
         app:srcCompat="@drawable/default_profile_photo" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/usernameId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/d_20"
         android:text="@string/name"
         android:textSize="@dimen/s_18"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
+        app:layout_constraintStart_toEndOf="@+id/profilePhoto"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/repositoryName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/repoName"
         android:textSize="@dimen/s_18"
-        app:layout_constraintBottom_toBottomOf="@+id/textView"
-        app:layout_constraintStart_toEndOf="@+id/textView"
-        app:layout_constraintTop_toTopOf="@+id/textView" />
+        app:layout_constraintBottom_toBottomOf="@+id/usernameId"
+        app:layout_constraintStart_toEndOf="@+id/usernameId"
+        app:layout_constraintTop_toTopOf="@+id/usernameId" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/descriptionId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/d_20"
         android:text="@string/description"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="@+id/textView"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
+        app:layout_constraintStart_toStartOf="@+id/usernameId"
+        app:layout_constraintTop_toBottomOf="@+id/usernameId" />
 </androidx.constraintlayout.widget.ConstraintLayout>

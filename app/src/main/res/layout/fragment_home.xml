@@ -23,9 +23,28 @@
 
     <Spinner
         android:id="@+id/spinner"
-        android:layout_width="227dp"
+        android:layout_width="0dp"
         android:layout_height="48dp"
+        android:layout_marginLeft="@dimen/d_20"
         android:layout_marginTop="16dp"
+        android:layout_marginRight="@dimen/d_20"
+        app:layout_constraintEnd_toStartOf="@+id/favouritesButton"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/favouritesButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/d_20"
+        android:drawableLeft="@drawable/baseline_favorite_24"
+        android:drawablePadding="@dimen/d_12"
+        android:text="@string/Favourites"
+        android:backgroundTint="#00000000"
+        android:elevation="1dp"
+        app:layout_constraintBottom_toBottomOf="@+id/spinner"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spinner" />
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>

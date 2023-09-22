@@ -10,6 +10,7 @@
     <string name="defaultText">Default Text</string>
     <string name="numberOfStars">Number of Start</string>
 
+    <string name="Favourites">Favourites</string>
     <string-array name="dateArray">
         <item>Last Day</item>
         <item>Last Week</item>
