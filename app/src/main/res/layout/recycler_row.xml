@@ -10,6 +10,7 @@
         android:id="@+id/profilePhoto"
         android:layout_width="@dimen/d_75"
         android:layout_height="@dimen/d_75"
+        android:layout_marginTop="@dimen/d_12"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/default_profile_photo" />
@@ -30,17 +31,17 @@
         android:layout_height="wrap_content"
         android:text="@string/repoName"
         android:textSize="@dimen/s_18"
-        app:layout_constraintBottom_toBottomOf="@+id/usernameId"
-        app:layout_constraintStart_toEndOf="@+id/usernameId"
-        app:layout_constraintTop_toTopOf="@+id/usernameId" />
+        app:layout_constraintStart_toStartOf="@+id/usernameId"
+        app:layout_constraintTop_toBottomOf="@+id/usernameId" />
 
     <TextView
         android:id="@+id/descriptionId"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginRight="@dimen/d_20"
-        android:text="@string/description"
+        android:maxLines="3"
+        android:text="aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/usernameId"
-        app:layout_constraintTop_toBottomOf="@+id/usernameId" />
+        app:layout_constraintTop_toBottomOf="@+id/repositoryName" />
 </androidx.constraintlayout.widget.ConstraintLayout>

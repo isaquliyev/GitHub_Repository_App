@@ -1,5 +1,6 @@
 package com.isaquliyev.githubsearchapp.ui.adapter
 
+import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,10 +15,10 @@ import com.squareup.picasso.Picasso
 class RepositoryAdapter(var list : List<Item>) : RecyclerView.Adapter<RepositoryAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
-        val username = itemView.findViewById<TextView>(R.id.usernameId)
-        val repositoryName = itemView.findViewById<TextView>(R.id.repositoryName)
-        val profilePhoto = itemView.findViewById<ImageView>(R.id.profilePhoto)
-        val description = itemView.findViewById<TextView>(R.id.descriptionId)
+        val username: TextView = itemView.findViewById(R.id.usernameId)
+        val repositoryName : TextView= itemView.findViewById(R.id.repositoryName)
+        val profilePhoto : ImageView = itemView.findViewById(R.id.profilePhoto)
+        val description : TextView = itemView.findViewById(R.id.descriptionId)
     }
 
     override fun onCreateViewHolder(
@@ -29,11 +30,19 @@ class RepositoryAdapter(var list : List<Item>) : RecyclerView.Adapter<Repository
         )
     }
 
+    @SuppressLint("SetTextI18n")
     override fun onBindViewHolder(holder: RepositoryAdapter.ViewHolder, position: Int) {
-        holder.username.setText(list.get(position).owner.login)
-        holder.repositoryName.setText(list.get(position).name)
-        holder.description.setText(list.get(position).description)
-        Picasso.get().load(list.get(position).owner.avatar_url).into(holder.profilePhoto)
+        holder.username.text = "Username: ${list[position].owner.login}"
+        holder.repositoryName.text = "Repository: ${list[position].name}"
+        holder.description.text = "Description: ${list[position].description}"
+        if(list[position].description != null ) {
+            holder.description.text = "Description: ${list[position].description}"
+        }
+        else{
+            holder.description.setText(R.string.defaultText)
+        }
+        Picasso.get().load(list[position].owner.avatar_url).into(holder.profilePhoto)
+
 
     }
 
