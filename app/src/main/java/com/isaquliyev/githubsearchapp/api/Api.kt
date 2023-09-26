@@ -8,5 +8,5 @@ import retrofit2.http.Query
 
 interface Api {
     @GET("search/repositories")
-    fun getRepositories(@Query("q") createdDate : String , @Query("sort") sort : String, @Query("order") order : String) : Call<ApiResponse>
+    fun getRepositories(@Query("q") createdDate : String , @Query("sort") sort : String, @Query("order") order : String, @Query("page") page : String) : Call<ApiResponse>
 }

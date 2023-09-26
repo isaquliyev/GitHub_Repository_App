@@ -13,8 +13,8 @@ import retrofit2.Response
 
 class RepositoriesViewModel : ViewModel() {
     private var repositoryLiveData = MutableLiveData<ApiResponse>()
-    fun getRepositories(createdDate: String, sort: String, order: String) {
-        RetrofitClient.api.getRepositories(createdDate = createdDate, sort = sort, order = order)
+    fun getRepositories(createdDate: String, sort: String, order: String, page : String) {
+        RetrofitClient.api.getRepositories(createdDate = createdDate, sort = sort, order = order, page = page)
             .enqueue(object : ViewModelInterface {
                 override fun onResponse(call: Call<ApiResponse>, response: Response<ApiResponse>) {
                     if (response.body() != null) {

@@ -26,7 +26,6 @@ class DetailFragment : Fragment() {
         return binding.root
     }
 
-    @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         val bundle : Bundle? = this.arguments
@@ -36,11 +35,9 @@ class DetailFragment : Fragment() {
 
 
         Picasso.get().load(item.owner.avatar_url).into(binding.profilePhotoInDetails)
-        binding.usernameInDetail.text = "Login: ${item.owner.login}"
+        binding.usernameInDetail.setText("Login: ${item.owner.login}")
         binding.repoNameInDetail.text = "Repository: ${item.name}"
         binding.descriptionInDetail.text = "Description: ${item.description}"
-
-
     }
 
 }
